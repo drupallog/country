@@ -18,7 +18,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class CountryDefaultWidget extends WidgetBase {
-  
+
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $countries = \Drupal::service('country_manager')->getList();
     $element['value'] = $element + array(
@@ -29,5 +29,6 @@ class CountryDefaultWidget extends WidgetBase {
         '#description' => t('Select a country'),
       );
     return $element;
-}
+  }
+
 }
